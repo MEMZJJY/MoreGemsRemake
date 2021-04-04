@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "tag": "minecraft:dianmon_block"
+      "item": "minecraft:diamond"
     },
-    "R": {
-      "item": "minecraft:gold_block"
+    "B": {
+      "item": "minecraft:gold_ingot"
     }
   },
   "result": {
