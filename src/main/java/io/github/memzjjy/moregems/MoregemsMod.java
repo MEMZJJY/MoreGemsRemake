@@ -16,8 +16,9 @@
 
 package io.github.memzjjy.moregems;
 
-import io.github.memzjjy.moregems.armor.MoregemsArmorMaterials;
 import io.github.memzjjy.moregems.item.BlueGemItem;
+import io.github.memzjjy.moregems.item.BlueGemSwordItem;
+import io.github.memzjjy.moregems.item.MoregemsArmorMaterials;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -35,7 +36,8 @@ public class MoregemsMod implements ModInitializer {
     public static final ArmorItem BLUE_GEM_ARMOR_CHEST = new ArmorItem(MoregemsArmorMaterials.BLUE_GEM_ARMOR, EquipmentSlot.CHEST, new Item.Settings());
     public static final ArmorItem BLUE_GEM_ARMOR_LEGS = new ArmorItem(MoregemsArmorMaterials.BLUE_GEM_ARMOR, EquipmentSlot.LEGS, new Item.Settings());
     public static final ArmorItem BLUE_GEM_ARMOR_FEET = new ArmorItem(MoregemsArmorMaterials.BLUE_GEM_ARMOR, EquipmentSlot.FEET, new Item.Settings());
-    public static final Block BLUE_GEM_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f));//创建蓝宝石方块
+    public static final Item BLUE_GEM_SWORD_ITEM = new BlueGemSwordItem((new Item.Settings()));
+    public static final Block BLUE_GEM_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).hardness(5.0f));//创建蓝宝石方块
     public static final ItemGroup MOREGEMS_GROUP = FabricItemGroupBuilder.create(
             new Identifier("moregems", "moregems_group"))
             .icon(() -> new ItemStack(BLUE_GEM_ITEM))
@@ -46,6 +48,7 @@ public class MoregemsMod implements ModInitializer {
                 stacks.add(new ItemStack(BLUE_GEM_ARMOR_LEGS));
                 stacks.add(new ItemStack(BLUE_GEM_ARMOR_FEET));
                 stacks.add(new ItemStack(BLUE_GEM_BLOCK));
+                stacks.add(new ItemStack(BLUE_GEM_SWORD_ITEM));
             })
             .build();
 
@@ -59,6 +62,7 @@ public class MoregemsMod implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("moregems", "blue_gem_armor_fee_item"), BLUE_GEM_ARMOR_FEET);
         Registry.register(Registry.BLOCK, new Identifier("moregems", "blue_gem_block"), BLUE_GEM_BLOCK);
         Registry.register(Registry.ITEM, new Identifier("moregems", "blue_gem_block_item"), new BlockItem(BLUE_GEM_BLOCK, new Item.Settings()));
+        Registry.register(Registry.ITEM, new Identifier("moregems", "blue_gem_sword_item"), BLUE_GEM_SWORD_ITEM);
 
         System.out.println("\n       　  　▃▆█▇▄▖\n" +
                 "　 　 　 ▟◤▖　　　◥█▎\n" +

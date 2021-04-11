@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.memzjjy.moregems.armor;
+package io.github.memzjjy.moregems.item;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
