@@ -1,10 +1,25 @@
+/*
+ * Copyright (c) 2021 [MEMZJJY of copyright owner]
+ * Licensed under the GNU General Public License v3.0
+ *  (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package io.github.memzjjy.moregems.armor;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -28,7 +43,7 @@ public enum MoregemsArmorMaterials implements ArmorMaterial {
    private final float toughness;
    private final Lazy<Ingredient> repairIngredientSupplier;
 
-   private MoregemsArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, Supplier<Ingredient> ingredientSupplier) {
+   MoregemsArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, Supplier<Ingredient> ingredientSupplier) {
       this.name = name;
       this.durabilityMultiplier = durabilityMultiplier;
       this.protectionAmounts = protectionAmounts;
@@ -55,7 +70,7 @@ public enum MoregemsArmorMaterials implements ArmorMaterial {
    }
 
    public Ingredient getRepairIngredient() {
-      return (Ingredient)this.repairIngredientSupplier.get();
+      return this.repairIngredientSupplier.get();
    }
 
    @Environment(EnvType.CLIENT)

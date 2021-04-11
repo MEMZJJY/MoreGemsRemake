@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "A A",
+    "A A"
+  ],
+  "key": {
+    "A": {
+      "item": "moregems:blue_gem_item"
+    }
+  },
+  "result": {
+    "item": "moregems:blue_gem_armor_fee_item",
+    "count": 1
+  }
+}
